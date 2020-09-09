@@ -20,11 +20,12 @@ class MainPage extends React.Component{
 
     render(){
         return(
-                <Container fluid className={"mt-3"}>
-                    <Row className=" mt-5 d-flex justify-content-center">
-                        <Col xs={8}>
-                            <SearchBar/>
+                <Container fluid className="mt-5">
+                    <Row className="mt-3 d-flex justify-content-center" >
+                        <Col  xs={8}>
+                           <SearchBar/>
                         </Col>
+
                     </Row>
                     <Row>
                         <Col xs={12} className="mt-5">
