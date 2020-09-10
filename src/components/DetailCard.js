@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container,Row,Col,Jumbotron,Badge} from 'reactstrap';
 import {Type} from './core'
-
+import {Link} from 'react-router-dom';
 const DetailCard =(props)=>{
         return(
             <Container fluid>
@@ -15,7 +15,8 @@ const DetailCard =(props)=>{
                     </Jumbotron>
                 </Col>
             </Row>
-                <Row className="mt-3">
+                <Link className="btn btn-warning" to={"/"} >&#8592;  Anasayfa </Link>
+                <Row className="mt-4">
                     <Col xs={3}>
                         <img className="img-thumbnail" src={props.data.Poster}
                              alt ="image"
@@ -48,6 +49,7 @@ const DetailCard =(props)=>{
                     </Col>
 
                 </Row>
+
             </Container>
     );
 }

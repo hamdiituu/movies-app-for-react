@@ -26,7 +26,6 @@ class SearchBar extends React.Component{
 
     }
     componentDidMount() {
-        this.props.pageReset();
         this.searchMovies();
     }
     componentDidUpdate(prevProps, prevState, snapshot) {

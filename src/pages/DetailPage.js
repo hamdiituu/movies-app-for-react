@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {DetailCard,AlertCard} from '../components';
 import {Loader} from '../components/core';
-
 class DetailPage extends React.Component{
 
     state ={
