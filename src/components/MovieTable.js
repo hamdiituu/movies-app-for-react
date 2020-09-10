@@ -1,35 +1,40 @@
 import React from 'react';
 import {Container,Table,Badge} from 'reactstrap';
 import {Link} from 'react-router-dom';
-const MovieTable =()=>{
-    return(
-        <Container fluid>
-            <Table hover >
-                <thead className="bg-warning ">
-                <tr>
-                    <th>#</th>
-                    <th>Film/Dizi Adı</th>
-                    <th>Yıl</th>
-                    <th>Tip</th>
-                    <th>Poster</th>
-                    <th>IMDB ID</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td><Link to="/detay">Go To Detail</Link></td>
-                    <td>Otto</td>
-                    <td>75 dak</td>
-                    <td><Badge color={"info"}>5.7/10</Badge></td>
-                </tr>
+class MovieTable extends React.Component {
+    state={
+        tableHeader :['#','Film/Dizi Adı','Yıl','Tip','Poster','IMDB Id']
+    }
+    render() {
+        return (
+            <Container fluid>
+                <Table hover>
+                    <thead className="bg-dark text-light">
+                    <tr>
+                        {
+                            this.state.tableHeader.map(item=>{
+                                return (<th key={item}> {item} </th>)
+                        })
+                        }
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td><Link to="/detay">Go To Detail</Link></td>
+                        <td><Badge className="badge badge-pill" color={"warning"}>2015</Badge></td>
+                        <td>Film</td>
+                        <td><Badge color={"info"}>5.7/10</Badge></td>
+                        <td>24FHD545</td>
+                    </tr>
 
-                </tbody>
-            </Table>
+                    </tbody>
+                </Table>
 
-        </Container>
+            </Container>
 
-    );
+        );
+    }
 }
 
 export default MovieTable;

@@ -25,14 +25,13 @@ class MainPage extends React.Component{
                         <Col  xs={8}>
                            <SearchBar/>
                         </Col>
-
                     </Row>
+                    <hr/>
                     <Row>
-                        <Col xs={12} className="mt-5">
+                        <Col xs={12}>
                             <MovieTable/>
                         </Col>
                     </Row>
-
                 </Container>
         )
     }
