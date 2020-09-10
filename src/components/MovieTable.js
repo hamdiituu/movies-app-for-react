@@ -101,16 +101,20 @@ class MovieTable extends React.Component {
                                 parseInt(this.state.searchMovies["totalResults"]) > 10 &&
                                 <div>
                                     <p>Toplam <b>{this.state.searchMovies["totalResults"]}</b> kayıt bulunmaktadır.</p>
+                                    <p> <b>{(this.props.pageCount *10)}
+                                            -
+                                        {(this.props.pageCount + 1) *10}
+                                    </b> arası kayıtlar görüntülenmektedir.</p>
                                     {
                                         this.props.pageCount >0 &&
                                         <Button
                                             onClick={()=>this.props.pageDecrease()}
                                             className="mr-3" color={"warning"}>Bir Önceki Kayıtlar</Button>
                                     }
-
-                                        <Button onClick={()=>this.props.pageIncrease()} color={"warning"}>Bir Sonraki Kayıtlar</Button>
-
-
+                                    {
+                                       this.props.pageCount < parseInt(this.state.searchMovies["totalResults"])/10 &&
+                                       <Button onClick={()=>this.props.pageIncrease()} color={"warning"}>Bir Sonraki Kayıtlar</Button>
+                                    }
 
 
                                 </div>
