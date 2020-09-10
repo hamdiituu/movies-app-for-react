@@ -16,11 +16,14 @@ class SearchBar extends React.Component{
         let params = {
             s : this.state.s,
             type: this.state.type,
-            y : this.state.y
+            y : (this.state.y)?this.state.y :null
         }
         this.setState({params})
         this.props.searchMovies(params);
 
+    }
+    componentDidMount() {
+        this.searchMovies();
     }
 
     render(){

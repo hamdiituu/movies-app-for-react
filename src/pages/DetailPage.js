@@ -17,7 +17,7 @@ class DetailPage extends React.Component{
     }
 
     handleRouteParams(){
-       let imdbId = this.props.match.params.movie.split("-")[1] ;
+       let imdbId = this.props.match.params.movie.split("-")[0] ;
        this.props.searchById(imdbId);
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
