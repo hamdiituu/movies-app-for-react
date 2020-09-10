@@ -1,22 +1,7 @@
 import React from 'react';
 import {SearchBar,MovieTable} from '../components';
 import {Container,Row,Col} from 'reactstrap';
-import {get} from '../utils/networking'
 class MainPage extends React.Component{
-    componentDidMount() {
-        var params ={
-            s : "Pokemon"
-        }
-        get(params)
-            .then(({data,status})=>{
-                if (status !==200){
-                    console.log("Hata");
-                }else{
-                    console.log(data)
-                }
-
-            });
-    }
 
     render(){
         return(

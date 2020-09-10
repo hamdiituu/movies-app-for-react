@@ -2,6 +2,7 @@ import React from "react";
 import {SEARCH_TYPES} from '../../utils/constants';
 import {Badge} from 'reactstrap';
 export default class Type extends React.Component{
+
     render() {
         return(
             <Badge color="success">

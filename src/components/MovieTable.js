@@ -59,7 +59,7 @@ class MovieTable extends React.Component {
                                             {movie.imdbID}
                                         </Badge>
                                     </td>
-                                    <td><Link to="/detay">{movie.Title}</Link></td>
+                                    <td><Link to={"/detay/" + movie.Title+ "-" + movie.imdbID+ "-detayi"} >{movie.Title}</Link></td>
                                     <td>
                                         <Badge className="badge badge-pill" color={"info"}>
                                             {movie.Year}

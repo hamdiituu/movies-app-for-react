@@ -6,7 +6,7 @@ const AppRoute = ()=>{
     return(
         <Switch>
             <Route exact path="/" component={MainPage} />
-            <Route path="/detay" component={DetailPage} />
+            <Route path="/detay/:movie" component={DetailPage} />
             <Route component={NotFound}/>
         </Switch>
     )
