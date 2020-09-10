@@ -2,6 +2,7 @@ import React from 'react';
 import {Container,Table,Badge} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
+import {Type} from './core'
 class MovieTable extends React.Component {
     state={
         tableHeader :['IMDB Id','Film/Dizi Adı','Yıl','Tip'],
@@ -50,9 +51,9 @@ class MovieTable extends React.Component {
                     </thead>
                     <tbody>
                     {
-                        this.state.searchList.map(movie => {
+                        this.state.searchList.map((movie,index) => {
                             return(
-                                <tr key={movie.imdbID}>
+                                <tr key={index}>
                                     <td>
                                         <Badge className="badge badge-pill" color={"warning"}>
                                             {movie.imdbID}
@@ -64,7 +65,7 @@ class MovieTable extends React.Component {
                                             {movie.Year}
                                             </Badge>
                                     </td>
-                                    <td>{movie.Type}</td>
+                                    <td> <Type type ={movie.Type}/> </td>
 
                                 </tr>
                             )
