@@ -1,5 +1,5 @@
 import React from 'react';
-import {searchById} from '../redux/acitons/SearchByIdAction'
+import {searchById} from '../redux/actions/SearchByIdAction'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {DetailCard,AlertCard} from '../components';

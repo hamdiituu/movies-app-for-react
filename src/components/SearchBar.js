@@ -3,20 +3,22 @@ import {Input,Button,Container,Col,Row} from 'reactstrap';
 import {SEARCH_TYPES} from '../utils/constants'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import {searchMovies} from '../redux/acitons/SearchMoviesAction';
+import {searchMovies} from '../redux/actions/SearchMoviesAction';
 class SearchBar extends React.Component{
     state ={
         type : null,
         y: null,
         s: "Pokemon",
-        params : null
+        params : null,
+        page : 0
 
     }
     searchMovies = ()=>{
         let params = {
             s : this.state.s,
             type: this.state.type,
-            y : (this.state.y)?this.state.y :null
+            y : (this.state.y)?this.state.y :null,
+            page : this.state.page === 0 ?null :this.state.page
         }
         this.setState({params})
         this.props.searchMovies(params);
@@ -24,6 +26,14 @@ class SearchBar extends React.Component{
     }
     componentDidMount() {
         this.searchMovies();
+    }
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const {pageCount} = this.props;
+        if (pageCount !== prevProps.pageCount){
+           this.setState({page : pageCount})
+            this.searchMovies()
+        }
+
     }
 
     render(){
@@ -75,5 +85,11 @@ const mapDispatchToProps = dispatch => {
         searchMovies,
     }, dispatch);
 };
+const mapStateToProps = state => {
+    return {
+        pageCount : state.PageControlReducer
 
-export default connect(null,mapDispatchToProps)(SearchBar);
+    };
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(SearchBar);

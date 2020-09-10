@@ -1,0 +1,2 @@
+export const PAGE_DECREASE = "PAGE_DECREASE";
+export const PAGE_INCREASE = "PAGE_INCREASE";

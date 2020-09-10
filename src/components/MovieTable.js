@@ -7,6 +7,8 @@ import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {Type} from './core'
 import AlertCard from './AlertCard'
+import {bindActionCreators} from "redux";
+import {pageDecrease,pageIncrease} from '../redux/actions/PageControlActions'
 class MovieTable extends React.Component {
     state={
         tableHeader :['IMDB Id','Film/Dizi Adı','Yıl','Tip'],
@@ -100,13 +102,16 @@ class MovieTable extends React.Component {
                                 <div>
                                     <p>Toplam <b>{this.state.searchMovies["totalResults"]}</b> kayıt bulunmaktadır.</p>
                                     {
-                                        this.state.page >0 &&
+                                        this.props.pageCount >0 &&
                                         <Button
-                                            onClick={()=>this.setState({page : this.state.page - 1})}
+                                            onClick={()=>this.props.pageDecrease()}
                                             className="mr-3" color={"warning"}>Bir Önceki Kayıtlar</Button>
                                     }
 
-                                    <Button onClick={()=>this.setState({page : this.state.page + 1})} color={"warning"}>Bir Sonraki Kayıtlar</Button>
+                                        <Button onClick={()=>this.props.pageIncrease()} color={"warning"}>Bir Sonraki Kayıtlar</Button>
+
+
+
 
                                 </div>
                             }
@@ -126,8 +131,18 @@ class MovieTable extends React.Component {
 const mapStateToProps = state => {
     return {
         searchMovies: state.SearchMoviesReducer.searchMovies,
-        searchError: state.SearchMoviesReducer.searchError
+        searchError: state.SearchMoviesReducer.searchError,
+        pageCount : state.PageControlReducer
+
     };
 };
 
-export default connect(mapStateToProps)(MovieTable);
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({
+        pageDecrease,
+        pageIncrease
+    }, dispatch);
+};
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(MovieTable);
