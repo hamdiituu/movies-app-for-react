@@ -4,6 +4,7 @@ import {SEARCH_TYPES} from '../utils/constants'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {searchMovies} from '../redux/actions/SearchMoviesAction';
+import {pageReset} from '../redux/actions/PageControlActions';
 class SearchBar extends React.Component{
     state ={
         type : null,
@@ -25,13 +26,18 @@ class SearchBar extends React.Component{
 
     }
     componentDidMount() {
+        this.props.pageReset();
         this.searchMovies();
     }
     componentDidUpdate(prevProps, prevState, snapshot) {
         const {pageCount} = this.props;
+        const {s} = this.state;
         if (pageCount !== prevProps.pageCount){
            this.setState({page : pageCount})
             this.searchMovies()
+        }
+        if (s !== prevState.s){
+           this.props.pageReset()
         }
 
     }
@@ -83,6 +89,7 @@ class SearchBar extends React.Component{
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         searchMovies,
+        pageReset
     }, dispatch);
 };
 const mapStateToProps = state => {
