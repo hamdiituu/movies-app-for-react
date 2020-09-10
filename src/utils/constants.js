@@ -1,5 +1,5 @@
 export const API_KEY = "cb96dbf1"
-export const API_URL ="http://www.omdbapi.com";
+export const API_URL ="https://www.omdbapi.com";
 
 export const SEARCH_TYPES =[
     {id : 0 , name:"Hepsi" ,value:""},

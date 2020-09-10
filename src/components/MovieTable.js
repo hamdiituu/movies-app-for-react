@@ -80,7 +80,7 @@ class MovieTable extends React.Component {
                                                     {movie.imdbID}
                                                 </Badge>
                                             </td>
-                                            <td><Link to={"/detay/" + movie.imdbID+ "-" + movie.Title+ "-detayi"} >{movie.Title}</Link></td>
+                                            <td><Link to={"/movies-app-for-react/detay/" + movie.imdbID+ "-" + movie.Title+ "-detayi"} >{movie.Title}</Link></td>
                                             <td>
                                                 <Badge className="badge badge-pill" color={"info"}>
                                                     {movie.Year}
@@ -99,7 +99,7 @@ class MovieTable extends React.Component {
                         </Table>
                             {
                                 parseInt(this.state.searchMovies["totalResults"]) > 10 &&
-                                <div>
+                                <div className="mt-3 mb-5">
                                     <p>Toplam <b>{this.state.searchMovies["totalResults"]}</b> kayıt bulunmaktadır.</p>
                                     <p> <b>{(this.props.pageCount *10)}
                                             -

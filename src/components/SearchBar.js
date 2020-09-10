@@ -45,7 +45,7 @@ class SearchBar extends React.Component{
         return(
             <Container>
                 <Row className=" d-flex justify-content-center">
-                    <Col xs={2} >
+                    <Col className="mt-2 mt-md-0" xs={12} md={2} >
                         <select
                             onChange={e => this.setState({type : e.target.value})}
                             className="form-control rounded-0">
@@ -59,24 +59,24 @@ class SearchBar extends React.Component{
 
                         </select>
                     </Col>
-                    <Col xs={2} >
+                    <Col className="mt-2 mt-md-0" xs={12} md={2} >
                         <Input
                             onChange={e => this.setState({y: parseInt(e.target.value)})}
                             className="rounded-0"
                             type="number"
                             placeholder={"Yıl"} />
                     </Col>
-                    <Col xs={6} >
+                    <Col className="mt-2 mt-md-0" xs={12} md={6} >
                         <Input
                             value={this.state.s}
                             onChange={e => this.setState({s:e.target.value})}
                             className="rounded-0"
                             placeholder={"Flim ,Dizi ,Bölüm ,Oyun Adı"} />
                     </Col>
-                    <Col xs={2}>
+                    <Col className="mt-2 mt-md-0" xs={12} md={2}>
                         <Button
                             onClick={this.searchMovies}
-                            className="rounded-0"
+                            className="w-100 rounded-0"
                             color={"success"}>Bul</Button>
                     </Col>
                 </Row>

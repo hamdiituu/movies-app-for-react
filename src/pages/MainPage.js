@@ -7,7 +7,7 @@ class MainPage extends React.Component{
         return(
                 <Container fluid className="mt-5">
                     <Row className="mt-3 d-flex justify-content-center" >
-                        <Col  xs={8}>
+                        <Col  xs={12} md={8}>
                            <SearchBar/>
                         </Col>
                     </Row>

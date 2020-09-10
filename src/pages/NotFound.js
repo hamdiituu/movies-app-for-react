@@ -9,7 +9,7 @@ class MainPage extends React.Component{
                <Jumbotron>
                    Malesef Böyle Bir Sayfa Mevcut Değil
                    <br/>
-                   Anasayfa dönmek için <b><Link to="/">tıklayınız.</Link></b>
+                   Anasayfa dönmek için <b><Link to="/movies-app-for-react/">tıklayınız.</Link></b>
                </Jumbotron>
             </Container>
         )

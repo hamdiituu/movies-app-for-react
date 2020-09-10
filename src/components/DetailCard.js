@@ -15,14 +15,14 @@ const DetailCard =(props)=>{
                     </Jumbotron>
                 </Col>
             </Row>
-                <Link className="btn btn-warning" to={"/"} >&#8592;  Anasayfa </Link>
+                <Link className="btn btn-warning" to={"/movies-app-for-react/"} >&#8592;  Anasayfa </Link>
                 <Row className="mt-4">
-                    <Col xs={3}>
+                    <Col xs={12} md={3}>
                         <img className="img-thumbnail" src={props.data.Poster}
                              alt ="image"
                         />
                     </Col>
-                    <Col xs={6}>
+                    <Col xs={12} md={6}>
                         <h3>{props.data.Title} <Type type={props.data.Type}/></h3>
                         <p className="mt-5">
                             <b>Süre :</b> {props.data.Runtime}
