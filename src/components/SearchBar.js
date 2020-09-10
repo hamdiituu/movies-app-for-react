@@ -3,6 +3,7 @@ import {Input,Button,Container,Col,Row} from 'reactstrap';
 import {SEARCH_TYPES} from '../utils/constants'
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import {searchMovies} from '../redux/acitons/SearchMoviesAction';
 class SearchBar extends React.Component{
     state ={
         type : null,
@@ -18,7 +19,8 @@ class SearchBar extends React.Component{
             y : this.state.y
         }
         this.setState({params})
-        alert("Tıklandı")
+        this.props.searchMovies(params);
+
     }
 
     render(){
@@ -67,8 +69,8 @@ class SearchBar extends React.Component{
 
 const mapDispatchToProps = dispatch => {
     return bindActionCreators({
-        //register
+        searchMovies,
     }, dispatch);
 };
 
-export default connect(mapDispatchToProps)(SearchBar);
+export default connect(null,mapDispatchToProps)(SearchBar);

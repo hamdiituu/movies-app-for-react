@@ -7,6 +7,7 @@ export const searchMovies = (params) => {
                 if (status !== 200) {
                     throw data;
                 }
+                console.log(data)
 
                 dispatch({
                     type: SEARCH_MOVIE_SUCCESS,
