@@ -6,5 +6,5 @@ _`2 - npm install`_
 <br>
 _`3 - npm run start`_
 <br>
-_`Live Url : https://hamdiituu.github.io/movies-app-for-react/`_
+_`Live Url : `_ https://hamdiituu.github.io/movies-app-for-react/
 
